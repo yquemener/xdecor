@@ -329,7 +329,7 @@ for name, recipe in pairs(xdecor_doors) do
 		},
 		description = name:gsub("%f[%w]%l", string.upper):gsub("_", " ") .. " Door",
 		inventory_image = "xdecor_" .. name .. "_door_inv.png",
-		protected = door_access(name),
+		-- protected = door_access(name),
 		groups = {choppy = 2, cracky = 2, oddly_breakable_by_hand = 1, door = 1},
 		recipe = recipe,
 		mesecons = mesecons_register,
