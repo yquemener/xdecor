@@ -334,6 +334,17 @@ for name, recipe in pairs(xdecor_doors) do
 		recipe = recipe,
 		mesecons = mesecons_register,
 	})
+	doors.register(name .. "_door_protected", {
+		tiles = {
+			{name = "xdecor_" .. name .. "_door.png", backface_culling = true}
+		},
+		description = name:gsub("%f[%w]%l", string.upper):gsub("_", " ") .. " Protected Door",
+		inventory_image = "xdecor_" .. name .. "_door_inv.png",
+		protected = true,
+		groups = {choppy = 2, cracky = 2, oddly_breakable_by_hand = 1, door = 1},
+		recipe = recipe,
+		mesecons = mesecons_register,
+	})
 end
 
 xdecor.register("enderchest", {
