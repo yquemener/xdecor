@@ -1,3 +1,5 @@
+local S = minetest.get_translator("xdecor")
+
 screwdriver = screwdriver or {}
 
 local function register_pane(name, desc, def)
@@ -54,7 +56,7 @@ register_pane("wood_frame", "Wood Frame", {
 })
 
 xdecor.register("baricade", {
-	description = "Baricade",
+	description = S("Baricade"),
 	drawtype = "plantlike",
 	paramtype2 = "facedir",
 	inventory_image = "xdecor_baricade.png",
@@ -66,7 +68,7 @@ xdecor.register("baricade", {
 })
 
 xdecor.register("barrel", {
-	description = "Barrel",
+	description = S("Barrel"),
 	tiles = {"xdecor_barrel_top.png", "xdecor_barrel_top.png", "xdecor_barrel_sides.png"},
 	on_place = minetest.rotate_node,
 	groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
@@ -128,7 +130,7 @@ register_storage("multishelf", "Multi Shelf", {
 })
 
 xdecor.register("candle", {
-	description = "Candle",
+	description = S("Candle"),
 	light_source = 12,
 	drawtype = "torchlike",
 	inventory_image = "xdecor_candle_inv.png",
@@ -159,7 +161,7 @@ xdecor.register("candle", {
 })
 
 xdecor.register("chair", {
-	description = "Chair",
+	description = S("Chair"),
 	tiles = {"xdecor_wood.png"},
 	sounds = default.node_sound_wood_defaults(),
 	groups = {choppy = 3, oddly_breakable_by_hand = 2, flammable = 2},
@@ -181,7 +183,7 @@ xdecor.register("chair", {
 })
 
 xdecor.register("cobweb", {
-	description = "Cobweb",
+	description = S("Cobweb"),
 	drawtype = "plantlike",
 	tiles = {"xdecor_cobweb.png"},
 	inventory_image = "xdecor_cobweb.png",
@@ -245,7 +247,7 @@ for _, c in ipairs(curtain_colors) do
 end
 
 xdecor.register("cushion", {
-	description = "Cushion",
+	description = S("Cushion"),
 	tiles = {"xdecor_cushion.png"},
 	groups = {snappy = 3, flammable = 3, fall_damage_add_percent = -50},
 	on_place = minetest.rotate_node,
@@ -259,7 +261,7 @@ xdecor.register("cushion", {
 })
 
 xdecor.register("cushion_block", {
-	description = "Cushion Block",
+	description = S("Cushion Block"),
 	tiles = {"xdecor_cushion.png"},
 	groups = {snappy = 3, flammable = 3, fall_damage_add_percent = -75, not_in_creative_inventory = 1}
 })
@@ -348,7 +350,7 @@ for name, recipe in pairs(xdecor_doors) do
 end
 
 xdecor.register("enderchest", {
-	description = "Ender Chest",
+	description = S("Ender Chest"),
 	tiles = {
 		"xdecor_enderchest_top.png", "xdecor_enderchest_top.png",
 		"xdecor_enderchest_side.png", "xdecor_enderchest_side.png",
@@ -376,7 +378,7 @@ minetest.register_on_joinplayer(function(player)
 end)
 
 xdecor.register("ivy", {
-	description = "Ivy",
+	description = S("Ivy"),
 	drawtype = "signlike",
 	walkable = false,
 	climbable = true,
@@ -390,7 +392,7 @@ xdecor.register("ivy", {
 })
 
 xdecor.register("lantern", {
-	description = "Lantern",
+	description = S("Lantern"),
 	light_source = 13,
 	drawtype = "plantlike",
 	inventory_image = "xdecor_lantern_inv.png",
@@ -420,7 +422,7 @@ end
 for _, f in ipairs({"dandelion_white", "dandelion_yellow", "geranium",
 		"rose", "tulip", "viola"}) do
 	xdecor.register("potted_" .. f, {
-		description = "Potted " .. f:gsub("%f[%w]%l", string.upper):gsub("_", " "),
+		description = S("Potted " .. f:gsub("%f[%w]%l", string.upper):gsub("_", " ")),
 		walkable = false,
 		groups = {snappy = 3, flammable = 3, plant = 1, flower = 1},
 		tiles = {"xdecor_" .. f .. "_pot.png"},
@@ -447,7 +449,7 @@ local painting_box = {
 }
 
 xdecor.register("painting_1", {
-	description = "Painting",
+	description = S("Painting"),
 	tiles = {"xdecor_painting_1.png"},
 	inventory_image = "xdecor_painting_empty.png",
 	wield_image = "xdecor_painting_empty.png",
@@ -490,7 +492,7 @@ for i = 2, 4 do
 end
 
 xdecor.register("stonepath", {
-	description = "Garden Stone Path",
+	description = S("Garden Stone Path"),
 	tiles = {"default_stone.png"},
 	groups = {snappy = 3},
 	on_rotate = screwdriver.rotate_simple,
@@ -532,7 +534,7 @@ register_hard_node("wood_tile", "Wooden Tile", {
 })
 
 xdecor.register("table", {
-	description = "Table",
+	description = S("Table"),
 	tiles = {"xdecor_wood.png"},
 	groups = {choppy = 2, oddly_breakable_by_hand = 1, flammable = 2},
 	sounds = default.node_sound_wood_defaults(),
@@ -542,7 +544,7 @@ xdecor.register("table", {
 })
 
 xdecor.register("tatami", {
-	description = "Tatami",
+	description = S("Tatami"),
 	tiles = {"xdecor_tatami.png"},
 	wield_image = "xdecor_tatami.png",
 	groups = {snappy = 3, flammable = 3},
@@ -551,7 +553,7 @@ xdecor.register("tatami", {
 })
 
 xdecor.register("trampoline", {
-	description = "Trampoline",
+	description = S("Trampoline"),
 	tiles = {"xdecor_trampoline.png", "mailbox_blank16.png", "xdecor_trampoline_sides.png"},
 	groups = {cracky = 3, oddly_breakable_by_hand = 1, fall_damage_add_percent = -80, bouncy = 90},
 	node_box = xdecor.nodebox.slab_y(0.5),
@@ -564,7 +566,7 @@ xdecor.register("trampoline", {
 })
 
 xdecor.register("tv", {
-	description = "Television",
+	description = S("Television"),
 	light_source = 11,
 	groups = {cracky = 3, oddly_breakable_by_hand = 2},
 	on_rotate = screwdriver.rotate_simple,
@@ -581,7 +583,7 @@ xdecor.register("tv", {
 })
 
 xdecor.register("woodframed_glass", {
-	description = "Wood Framed Glass",
+	description = S("Wood Framed Glass"),
 	drawtype = "glasslike_framed",
 	sunlight_propagates = true,
 	tiles = {"xdecor_woodframed_glass.png", "xdecor_woodframed_glass_detail.png"},
